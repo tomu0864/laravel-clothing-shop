@@ -15,9 +15,27 @@ class OrderController extends Controller
         $this->order = $order;
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $orders = $this->order->latest()->paginate(10);
+        $query = $this->order::query();
+
+        if ($request->search) {
+            $searchTerm = '%' . $request->search . '%';
+
+            $query->where('order_number', 'LIKE', $searchTerm)
+                ->orWhereHas('product', function ($query) use ($searchTerm) {
+                    $query->where('name', 'LIKE', $searchTerm);
+                })
+                ->orWhereHas('user', function ($query) use ($searchTerm) {
+                    $query->where('name', 'LIKE', $searchTerm);
+                });
+
+            $orders = $query->latest()->paginate(10);
+        } else {
+
+            $orders = $this->order->latest()->paginate(10);
+        }
+
 
         return view('seller.orders.index')->with('orders', $orders);
     }

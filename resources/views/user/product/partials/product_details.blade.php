@@ -43,22 +43,22 @@
             </div>
           </a>
         </li>
-        <li class="nav-item" role="presentation">
+        {{-- <li class="nav-item" role="presentation">
           <a class="nav-link" data-bs-toggle="tab" href="#review" role="tab" aria-selected="false">
             <div class="d-flex align-items-center">
               <div class="tab-icon"><i class="bx bx-star font-18 me-1"></i></div>
               <div class="tab-title">Reviews</div>
             </div>
           </a>
-        </li>
+        </li> --}}
       </ul>
       <div class="tab-content pt-3">
         <div class="tab-pane fade active show" id="description" role="tabpanel">
           <p>{!! nl2br(e($product->description)) !!}</p>
         </div>
-        <div class="tab-pane fade" id="review" role="tabpanel">
+        {{-- <div class="tab-pane fade" id="review" role="tabpanel">
           <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
-        </div>
+        </div> --}}
       </div>
     </div>
     </div>

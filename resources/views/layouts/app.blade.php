@@ -61,7 +61,7 @@
                     <ul class="navbar-nav ms-auto">
 
                         @if(!request()->is('seller/*'))
-                        <form action="{{ route('search') }}" method="get" class="d-flex align-items-center me-5">
+                        <form action="{{ route('search') }}" method="get" class="d-flex align-items-center me-5 mb-3 mb-md-0">
                             <div class="input-group">
                                 <input type="search" name="search" placeholder="Enter free words" class="form-control form-control-sm">
                                 <button type="submit" class="btn btn-outline-secondary">
@@ -77,9 +77,9 @@
                         @endphp
 
                         @if(!request()->is('seller/*'))
-                        <form action="{{ route('category') }}" method="get" class="d-flex align-items-center me-5">
+                        <form action="{{ route('category') }}" method="get" class="d-flex align-items-center me-5 mb-2 mb-md-0">
                             <div class="input-group">
-                                <select class="form-select" name="category" aria-label="Category select" aria-describedby="category-icon">
+                                <select class="form-select form-select-sm" name="category" aria-label="Category select" aria-describedby="category-icon">
                                     <option  disabled selected hidden>Search by category</option>
                                     @foreach ($categories as $category)
                                         <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -108,13 +108,15 @@
                         @else
 
                             {{-- Cart --}}
-                            <a href="{{ route('cart.index') }}" class="nav-link position-relative p-0 me-2 mt-2">
-                                <i class="fa-solid fa-cart-shopping pt-1"></i>
-                                @if (Auth::user()->carts->isNotEmpty())
-                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                        {{ Auth::user()->carts->count() }}
-                                    </span>
-                                @endif
+                            <a href="{{ route('cart.index') }}" class="nav-link d-flex align-items-center p-0 me-2 mt-md-0 mt-2">
+                                <div class="position-relative">
+                                    <i class="fa-solid fa-cart-shopping pt-1"></i>
+                                    @if (Auth::user()->carts->isNotEmpty())
+                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                            {{ Auth::user()->carts->count() }}
+                                        </span>
+                                    @endif
+                                </div>
                             </a>
                     
                             <li class="nav-item dropdown">

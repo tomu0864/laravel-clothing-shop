@@ -6,7 +6,7 @@
 
 
     <div class="d-flex justify-content-between">
-        <form action="{{ route('seller.products') }}" method="get" class="d-flex align-items-center me-5">
+        <form action="{{ route('seller.orders') }}" method="get" class="d-flex align-items-center me-5">
           <div class="input-group">
               <input type="search" name="search" placeholder="search" class="form-control form-control-sm">
               <button type="submit" class="btn btn-primary">

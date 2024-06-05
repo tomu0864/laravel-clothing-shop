@@ -82,19 +82,20 @@
             @if (session('invalid_quantity'))
                 <p class="text-danger">{{ session('invalid_quantity') }}</p>
             @endif
-            <button name="action" value="buy" class="btn btn-primary">Buy Now</button>
-            <button name="action" value="add_to_cart" class="btn btn-outline-primary ms-1">
-            
-              
-            @if($product->cartAdded())
-            <i class="fa-solid fa-cart-shopping"></i> <span class="text">Already in cart</span>
-            @else
-            <i class="fas fa-cart-plus"></i> <span class="text">Add to cart</span>
-            </button>
-            @endif
 
-            </form>
-            </div>
+
+            <div class="d-flex flex-wrap align-items-center">
+              <button name="action" value="buy" class="btn btn-primary mb-2 mb-md-0 me-md-2">Buy Now</button>
+              <button name="action" value="add_to_cart" class="btn btn-outline-primary">
+                  @if($product->cartAdded())
+                  <i class="fa-solid fa-cart-shopping"></i> <span class="text">Already in cart</span>
+                  @else
+                  <i class="fas fa-cart-plus"></i> <span class="text">Add to cart</span>
+                  @endif
+              </button>
+           </div>
+          </form>
+        </div>
        
        @else
            <h5>Please <a href="{{ route('login') }}" class="text-decoration-none fw-bold" style="color: #62b4a5;">Login</a> first to check out</h5>
