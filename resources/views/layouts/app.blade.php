@@ -72,10 +72,8 @@
                         @endif
 
                         @php
-                            if(App\Models\Maincategory::all()){
-                                
-                               $categories = App\Models\Maincategory::all();
-                            }
+                          use App\Models\MainCategory;
+                          $categories = MainCategory::all();
                         @endphp
 
                         @if(!request()->is('seller/*'))
