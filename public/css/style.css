@@ -1,0 +1,51 @@
+/* Home */
+
+.sub-title {
+    background-color: #62b4a5;
+}
+
+/* Image */
+.header-img {
+    height: 25rem;
+    object-fit: cover;
+}
+.img-sm {
+    width: 3rem;
+    height: 3rem;
+}
+
+.img-lg {
+    width: 10rem;
+    height: 10rem;
+}
+
+.home-product-img {
+    height: 17rem;
+    object-fit: cover;
+}
+
+.product-tag {
+    background-color: #62b4a5;
+}
+
+.cart-img {
+    width: 6rem;
+    height: 6rem;
+    object-fit: cover;
+}
+
+.white-space-pre {
+    word-wrap: break-word;
+}
+
+.roboto-medium {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.roboto-black {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
